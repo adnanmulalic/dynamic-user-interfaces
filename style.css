@@ -9,3 +9,45 @@
 .footer {
     background-color: pink;
 }
+
+#menuButton {
+    padding: 10px;
+    flex: 10;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty {
+    flex-grow: 90;
+    transition: flex-grow 2s;
+}
+
+.visible {
+    transform: scaleY(1);
+    transform-origin: top;
+    height: fit-content;
+    transition: transform 500ms, height 500ms;
+}
+
+.hidden {
+    transform: scaleY(0);
+    transform-origin: top;
+    height: 0;
+    transition: transform 500ms, height 500ms;
+}
+
+.menuOptions {
+    background-color: lightblue;
+
+}
+
+#menuButton:active + div {
+    flex-grow: 90;
+}
+#menuButton:active + div + div {
+    flex: 0;
+}
+
