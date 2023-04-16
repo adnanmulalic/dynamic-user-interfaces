@@ -1,23 +1,66 @@
-.header {
-    background-color: blue;
+body {
+    margin: 0;
+}
+.container{
+    height: 100vh;
+    background-color: yellow;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "sidebar header header header"
+        "sidebar middle middle middle"
+        "sidebar footer footer footer";
 }
 
-.middle {
-    background-color: yellow;
+.header {
+    background-color: blue;
+    grid-area: header;
+}
+
+.sidebar {
+    background-color: green;
+    grid-area: sidebar;
+}
+
+.content {
+    grid-area: middle;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .footer {
     background-color: pink;
+    grid-area: footer;
 }
 
 #menuButton {
     padding: 10px;
-    flex: 10;
+    align-self: flex-start;
 }
 
 #menu {
     display: flex;
     flex-direction: column;
+}
+
+#pictureFrame {
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.picture {
+    max-width: 1000px;
+    max-height: 700px;
+}
+
+.imageButtons {
+    display: flex;
+    gap: 1rem;
 }
 
 .empty {
@@ -28,15 +71,13 @@
 .visible {
     transform: scaleY(1);
     transform-origin: top;
-    height: fit-content;
-    transition: transform 500ms, height 500ms;
+    transition: transform 500ms;
 }
 
 .hidden {
     transform: scaleY(0);
     transform-origin: top;
-    height: 0;
-    transition: transform 500ms, height 500ms;
+    transition: transform 500ms;
 }
 
 .menuOptions {
@@ -44,10 +85,4 @@
 
 }
 
-#menuButton:active + div {
-    flex-grow: 90;
-}
-#menuButton:active + div + div {
-    flex: 0;
-}
 
